@@ -108,6 +108,15 @@
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   };
 
+  # Enable zsh
+  programs.zsh.enable = true;
+
+  # Enable Oh-my-zsh
+  programs.zsh.ohMyZsh = {
+    enable = true;
+    plugins = ["fzf-tab" "git" "sudo" "z" "zsh-autosuggestions" "zsh-fzf-history-search" "zsh-syntax-highlighting" "autoswitch_virtualenv"];
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
