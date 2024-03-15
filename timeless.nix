@@ -123,6 +123,7 @@
     obsidian
     alejandra
     ckb-next
+    telegram-desktop
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
