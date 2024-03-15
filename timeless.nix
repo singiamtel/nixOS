@@ -76,6 +76,7 @@
     isNormalUser = true;
     description = "sergio";
     extraGroups = ["networkmanager" "wheel"];
+    shell = pkgs.zsh;
     packages = with pkgs; [
     ];
   };
