@@ -136,6 +136,7 @@
     telegram-desktop
     libnotify
     spotify
+    lutris
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
