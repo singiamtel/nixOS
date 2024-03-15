@@ -137,6 +137,7 @@
     libnotify
     spotify
     lutris
+    gnome3.adwaita-icon-theme
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
