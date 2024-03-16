@@ -143,6 +143,7 @@
     spotify
     lutris
     gnome3.adwaita-icon-theme
+    fzf
     (appimageTools.wrapType1 {
       name = "Cursor";
       version = "16";
