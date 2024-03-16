@@ -110,13 +110,16 @@
   };
 
   # Enable zsh
-  programs.zsh.enable = true;
-
-  # Enable Oh-my-zsh
-  programs.zsh.ohMyZsh = {
+  programs.zsh = {
     enable = true;
-    plugins = ["fzf-tab" "git" "sudo" "z" "zsh-autosuggestions" "zsh-fzf-history-search" "zsh-syntax-highlighting" "autoswitch_virtualenv"];
-    theme = "robbyrussell";
+    syntaxHighlighting.enable = true;
+
+    enableAutosuggestions = true;
+    ohMyZsh = {
+      enable = true;
+      plugins = ["fzf-tab" "git" "sudo" "z" "zsh-fzf-history-search" "zsh-syntax-highlighting" "autoswitch_virtualenv"];
+      theme = "robbyrussell";
+    };
   };
 
   # List packages installed in system profile. To search, run:
