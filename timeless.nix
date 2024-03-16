@@ -99,7 +99,7 @@
       enableAutosuggestions = true;
       oh-my-zsh = {
         enable = true;
-        plugins = ["git" "sudo" "z" "zsh-fzf-history-search" "autoswitch_virtualenv"];
+        plugins = ["git" "sudo" "z"];
         theme = "robbyrussell";
       };
       plugins = [
@@ -119,6 +119,15 @@
             repo = "zsh-fzf-history-search";
             rev = "bf3ef5588af6d3bf7cc60f2ad2c1c95bca216241";
             hash = "sha256-0/YOL1/G2SWncbLNaclSYUz7VyfWu+OB8TYJYm4NYkM=";
+          };
+        }
+        {
+          name = "zsh-autoswitch-virtualenv";
+          src = pkgs.fetchFromGitHub {
+            owner = "MichaelAquilina";
+            repo = "zsh-autoswitch-virtualenv";
+            rev = "4ddc42d3d84bfb36fac1eb48e9e6de33a92fa4f1";
+            hash = "sha256-hwg9wDMU2XqJ5FQEwMVVaz0n+xZ8NI82tH9VhLfFRC4=";
           };
         }
       ];
