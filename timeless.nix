@@ -118,6 +118,7 @@
     programs.zsh = {
       enable = true;
       initExtra = ''
+        export KEYTIMEOUT=1
         source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
       '';
       enableCompletion = true;
