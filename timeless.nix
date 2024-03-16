@@ -143,8 +143,9 @@
     defaultEditor = true;
     configure = {
       customRC = ''
-        set undofile
-        set undodir=~/.vim/undodir
+               set undofile
+               set undodir=~/.vim/undodir
+        set clipboard^=unnamed,unnamedplus
       '';
     };
   };
