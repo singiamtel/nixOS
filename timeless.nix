@@ -175,6 +175,7 @@
     libnotify
     spotify
     nix-prefetch-git
+    xclip
 
     # games
     lutris
