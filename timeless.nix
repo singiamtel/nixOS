@@ -118,8 +118,11 @@
     programs.zsh = {
       enable = true;
       initExtra = ''
-        export KEYTIMEOUT=1
-        source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+               export KEYTIMEOUT=1
+        bindkey -v
+        bindkey '^e' edit-command-line
+        bindkey -M viins '^R' fzf_history_search
+        bindkey "^?" backward-delete-char
       '';
       enableCompletion = true;
       syntaxHighlighting.enable = true;
