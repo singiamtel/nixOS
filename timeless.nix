@@ -117,6 +117,9 @@
     # Enable zsh
     programs.zsh = {
       enable = true;
+      initExtra = ''
+        source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+      '';
       enableCompletion = true;
       syntaxHighlighting.enable = true;
       enableAutosuggestions = true;
@@ -291,4 +294,5 @@
   hardware.ckb-next.enable = true;
 
   environment.variables.EDITOR = "nvim";
+  environment.localBinInPath = true;
 }
