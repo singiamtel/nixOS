@@ -179,6 +179,7 @@
     spotify
     nix-prefetch-git
     xclip
+    nodejs
 
     # games
     lutris
