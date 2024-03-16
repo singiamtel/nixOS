@@ -141,6 +141,12 @@
   programs.neovim = {
     enable = true;
     defaultEditor = true;
+    configure = {
+      customRC = ''
+        set undofile
+        set undodir=~/.vim/undodir
+      '';
+    };
   };
 
   programs.steam = {
