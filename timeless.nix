@@ -112,12 +112,12 @@
   # Enable zsh
   programs.zsh = {
     enable = true;
+    enableCompletion = true;
     syntaxHighlighting.enable = true;
-
     enableAutosuggestions = true;
-    ohMyZsh = {
+    oh-my-zsh = {
       enable = true;
-      plugins = ["fzf-tab" "git" "sudo" "z" "zsh-fzf-history-search" "zsh-syntax-highlighting" "autoswitch_virtualenv"];
+      plugins = ["fzf-tab" "git" "sudo" "z" "zsh-fzf-history-search" "autoswitch_virtualenv"];
       theme = "robbyrussell";
     };
   };
