@@ -103,6 +103,15 @@
       extensions = with pkgs.vscode-extensions; [
         vscodevim.vim
         yzhang.markdown-all-in-one
+        formulahendry.auto-rename-tag
+        #steoates.autoimport
+        aaron-bond.better-comments
+        ms-python.black-formatter
+        naumovs.color-highlight
+        #janisdd.vscode-edit-csv
+        bradlc.vscode-tailwindcss
+        #vue.volar
+        dbaeumer.vscode-eslint
       ];
     };
     # Enable zsh
