@@ -139,6 +139,15 @@
     spotify
     lutris
     gnome3.adwaita-icon-theme
+    (appimageTools.wrapType1 {
+      name = "Cursor";
+      version = "16";
+
+      src = fetchurl {
+        url = "https://download.cursor.sh/linux/appImage/x64";
+        sha256 = "08q8lrs8bgyjpwvxswxix2m6n24k6zzbsqwnbachdf16b3l4c4iy";
+      };
+    })
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
