@@ -123,7 +123,7 @@
       oh-my-zsh = {
         enable = true;
         plugins = ["git" "sudo" "z"];
-        theme = "robbyrussell";
+        theme = "ys";
       };
       plugins = [
         {
