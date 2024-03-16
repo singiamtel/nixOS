@@ -180,6 +180,7 @@
     nix-prefetch-git
     xclip
     nodejs
+    lazygit
 
     # games
     lutris
