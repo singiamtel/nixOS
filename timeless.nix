@@ -117,13 +117,6 @@
     # Enable zsh
     programs.zsh = {
       enable = true;
-      initExtra = ''
-               export KEYTIMEOUT=1
-        bindkey -v
-        bindkey '^e' edit-command-line
-        bindkey -M viins '^R' fzf_history_search
-        bindkey "^?" backward-delete-char
-      '';
       enableCompletion = true;
       syntaxHighlighting.enable = true;
       enableAutosuggestions = true;
@@ -161,6 +154,14 @@
           };
         }
       ];
+
+      initExtra = ''
+               export KEYTIMEOUT=1
+        bindkey -v
+        bindkey '^e' edit-command-line
+        bindkey -M viins '^R' fzf_history_search
+        bindkey "^?" backward-delete-char
+      '';
     };
 
     # The state version is required and should stay at the version you
