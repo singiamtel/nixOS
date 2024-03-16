@@ -6,9 +6,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # For home manager
-  # nixpkgs.config.allowUnfreePredicate = (pkg: true);
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -72,6 +69,8 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
+
+  programs.zsh.enable = true;
   users.users.sergio = {
     isNormalUser = true;
     description = "sergio";
@@ -92,6 +91,29 @@
         yzhang.markdown-all-in-one
       ];
     };
+    # Enable zsh
+    programs.zsh = {
+      enable = true;
+      enableCompletion = true;
+      syntaxHighlighting.enable = true;
+      enableAutosuggestions = true;
+      oh-my-zsh = {
+        enable = true;
+        plugins = ["fzf-tab" "git" "sudo" "z" "zsh-fzf-history-search" "autoswitch_virtualenv"];
+        theme = "robbyrussell";
+      };
+      plugins = [
+        {
+          name = "fzf-tab";
+          src = pkgs.fetchFromGitHub {
+            owner = "Aloxaf";
+            repo = "fzf-tab";
+            rev = "bf3ef5588af6d3bf7cc60f2ad2c1c95bca216241";
+            hash = "sha256-0/YOL1/G2SWncbLNaclSYUz7VyfWu+OB8TYJYm4NYkM=";
+          };
+        }
+      ];
+    };
 
     # The state version is required and should stay at the version you
     # originally installed.
@@ -107,19 +129,6 @@
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-  };
-
-  # Enable zsh
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    syntaxHighlighting.enable = true;
-    enableAutosuggestions = true;
-    oh-my-zsh = {
-      enable = true;
-      plugins = ["fzf-tab" "git" "sudo" "z" "zsh-fzf-history-search" "autoswitch_virtualenv"];
-      theme = "robbyrussell";
-    };
   };
 
   # List packages installed in system profile. To search, run:
@@ -141,8 +150,13 @@
     telegram-desktop
     libnotify
     spotify
+    nix-prefetch-git
+
+    # games
     lutris
     gnome3.adwaita-icon-theme
+
+    # shell
     fzf
     (appimageTools.wrapType1 {
       name = "Cursor";
