@@ -160,7 +160,7 @@
         bindkey -v
         bindkey '^e' edit-command-line
         bindkey "^?" backward-delete-char
-        bindkey -M viins '^R' reverse-i search
+        bindkey -M viins '^R' history-incremental-pattern-search-backward
       '';
     };
 
