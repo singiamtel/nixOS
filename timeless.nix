@@ -116,7 +116,6 @@
     };
     # Enable zsh
     programs.zsh = {
-      enable = true;
       enableCompletion = true;
       syntaxHighlighting.enable = true;
       enableAutosuggestions = true;
@@ -156,11 +155,15 @@
       ];
 
       initExtra = ''
-        export KEYTIMEOUT=1
-        bindkey -v
-        bindkey '^e' edit-command-line
-        bindkey "^?" backward-delete-char
-        bindkey -M viins '^R' history-incremental-pattern-search-backward
+               export KEYTIMEOUT=1
+               bindkey -v
+               bindkey '^e' edit-command-line
+               bindkey "^?" backward-delete-char
+               bindkey -M viins '^R' history-incremental-pattern-search-backward
+        alias lg="lazygit"
+        alias e="nvim"
+        alias v="nvim"
+        alias -g G="grep -Ei"
       '';
     };
 
