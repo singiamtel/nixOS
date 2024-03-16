@@ -99,7 +99,7 @@
       enableAutosuggestions = true;
       oh-my-zsh = {
         enable = true;
-        plugins = ["fzf-tab" "git" "sudo" "z" "zsh-fzf-history-search" "autoswitch_virtualenv"];
+        plugins = ["git" "sudo" "z" "zsh-fzf-history-search" "autoswitch_virtualenv"];
         theme = "robbyrussell";
       };
       plugins = [
@@ -108,6 +108,15 @@
           src = pkgs.fetchFromGitHub {
             owner = "Aloxaf";
             repo = "fzf-tab";
+            rev = "bf3ef5588af6d3bf7cc60f2ad2c1c95bca216241";
+            hash = "sha256-0/YOL1/G2SWncbLNaclSYUz7VyfWu+OB8TYJYm4NYkM=";
+          };
+        }
+        {
+          name = "zsh-fzf-history-search";
+          src = pkgs.fetchFromGitHub {
+            owner = "joshskidmore";
+            repo = "zsh-fzf-history-search";
             rev = "bf3ef5588af6d3bf7cc60f2ad2c1c95bca216241";
             hash = "sha256-0/YOL1/G2SWncbLNaclSYUz7VyfWu+OB8TYJYm4NYkM=";
           };
