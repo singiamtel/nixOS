@@ -156,10 +156,10 @@
       ];
 
       initExtra = ''
-               export KEYTIMEOUT=1
+        export KEYTIMEOUT=1
         bindkey -v
         bindkey '^e' edit-command-line
-        bindkey -M viins '^R' fzf_history_search
+        # bindkey -M viins '^R' fzf_history_search
         bindkey "^?" backward-delete-char
       '';
     };
