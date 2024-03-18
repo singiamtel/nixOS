@@ -112,6 +112,7 @@
         bradlc.vscode-tailwindcss
         #vue.volar
         dbaeumer.vscode-eslint
+        eamodio.gitlens
       ];
     };
     # Enable zsh
