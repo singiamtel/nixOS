@@ -216,6 +216,7 @@
     nix-prefetch-git
     xclip
     nodejs
+    bun
     lazygit
 
     # games
