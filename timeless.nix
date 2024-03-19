@@ -219,6 +219,7 @@
     nodejs
     bun
     lazygit
+    bat
 
     # games
     lutris
