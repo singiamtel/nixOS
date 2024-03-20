@@ -220,6 +220,7 @@
     bun
     lazygit
     bat
+    jq
 
     # games
     lutris
