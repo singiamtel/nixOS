@@ -205,6 +205,8 @@
     bat
     jq
     python3
+    cargo
+    rustc
 
     # games
     lutris
