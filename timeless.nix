@@ -207,6 +207,7 @@
     python3
     cargo
     rustc
+    clang
 
     # games
     lutris
