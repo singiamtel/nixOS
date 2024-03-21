@@ -208,6 +208,7 @@
     python3
     cargo
     rustc
+    rustfmt
     clang
 
     # games
