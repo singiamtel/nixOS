@@ -12,10 +12,6 @@
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -32,8 +28,6 @@
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
   services.xserver.videoDrivers = ["nvidia"];
-  # trace: warning: The option `services.xserver.xkbVariant' defined in `/etc/nixos/configuration.nix' has been renamed to `services.xserver.xkb.variant'.
-  # trace: warning: The option `services.xserver.layout' defined in `/etc/nixos/configuration.nix' has been renamed to `services.xserver.xkb.layout'.
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -57,18 +51,7 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
 
   programs.zsh.enable = true;
   users.users.sergio = {
@@ -97,7 +80,6 @@
         '';
       })
     ];
-    programs.bash.enable = true;
     programs.vscode = {
       enable = true;
       extensions = with pkgs.vscode-extensions; [
@@ -158,11 +140,11 @@
       ];
 
       initExtra = ''
-               export KEYTIMEOUT=1
-               bindkey -v
-               bindkey '^e' edit-command-line
-               bindkey "^?" backward-delete-char
-               bindkey -M viins '^R' history-incremental-pattern-search-backward
+        export KEYTIMEOUT=1
+        bindkey -v
+        bindkey '^e' edit-command-line
+        bindkey "^?" backward-delete-char
+        bindkey -M viins '^R' history-incremental-pattern-search-backward
         alias lg="lazygit"
         alias e="nvim"
         alias v="nvim"
@@ -284,7 +266,7 @@
     # Enable this if you have graphical corruption issues or application crashes after waking
     # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead
     # of just the bare essentials.
-    powerManagement.enable = false;
+    powerManagement.enable = true;
 
     # Fine-grained power management. Turns off GPU when not in use.
     # Experimental and only works on modern Nvidia GPUs (Turing or newer).
@@ -299,11 +281,7 @@
     # Currently alpha-quality/buggy, so false is currently the recommended setting.
     open = false;
 
-    # Enable the Nvidia settings menu,
-    # accessible via `nvidia-settings`.
     nvidiaSettings = true;
-
-    # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
   hardware.ckb-next.enable = true;
