@@ -96,6 +96,7 @@
         dbaeumer.vscode-eslint
         eamodio.gitlens
         bbenoist.nix
+        rust-lang.rust-analyzer
       ];
     };
     # Enable zsh
