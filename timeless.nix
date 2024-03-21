@@ -113,6 +113,7 @@
         #vue.volar
         dbaeumer.vscode-eslint
         eamodio.gitlens
+        bbenoist.nix
       ];
     };
     # Enable zsh
