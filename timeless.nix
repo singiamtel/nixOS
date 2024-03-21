@@ -204,6 +204,7 @@
     lazygit
     bat
     jq
+    python3
 
     # games
     lutris
