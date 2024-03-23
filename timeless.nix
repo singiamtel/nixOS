@@ -201,6 +201,7 @@
     nix-prefetch-git
     xclip
     nodejs
+    nodejs.pkgs.pnpm
     bun
     lazygit
     bat
