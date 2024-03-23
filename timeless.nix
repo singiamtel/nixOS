@@ -211,8 +211,7 @@
     rustc
     rustfmt
     clang
-    kooha
-
+    kazam
     # games
     lutris
     gnome3.adwaita-icon-theme
