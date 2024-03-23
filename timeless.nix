@@ -212,6 +212,7 @@
     rustfmt
     clang
     kazam
+    mpv
     # games
     lutris
     gnome3.adwaita-icon-theme
