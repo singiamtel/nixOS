@@ -211,6 +211,7 @@
     rustc
     rustfmt
     clang
+    kooha
 
     # games
     lutris
