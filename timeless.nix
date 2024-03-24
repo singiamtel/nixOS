@@ -80,25 +80,6 @@
         '';
       })
     ];
-    programs.vscode = {
-      enable = true;
-      extensions = with pkgs.vscode-extensions; [
-        vscodevim.vim
-        yzhang.markdown-all-in-one
-        formulahendry.auto-rename-tag
-        #steoates.autoimport
-        aaron-bond.better-comments
-        ms-python.black-formatter
-        naumovs.color-highlight
-        #janisdd.vscode-edit-csv
-        bradlc.vscode-tailwindcss
-        #vue.volar
-        dbaeumer.vscode-eslint
-        eamodio.gitlens
-        bbenoist.nix
-        rust-lang.rust-analyzer
-      ];
-    };
     # Enable zsh
     programs.zsh = {
       enable = true;
@@ -181,44 +162,48 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim
-    wget
-    git
-    jdk17
-    firefox
-    google-chrome
-    kate
-    pkgs.bitwarden
-    thunderbird
-    discord
-    neofetch
-    obsidian
-    alejandra
-    ckb-next
-    telegram-desktop
-    libnotify
-    spotify
-    nix-prefetch-git
-    xclip
+    # Development
     nodejs
     nodejs.pkgs.pnpm
     bun
     lazygit
-    bat
-    jq
-    python3
-    cargo
     rustc
     rustfmt
+    cargo
     clang
-    kazam
-    mpv
-    # games
+    alejandra # .nix linter
+    nix-prefetch-git
+    jdk17
+    python3
+
+    # CLI
+    fzf
+    xclip
+    bat
+    jq
+    neofetch
+    vim
+    wget
+    git
+    libnotify
+
+    # Games
     lutris
     gnome3.adwaita-icon-theme
 
-    # shell
-    fzf
+    # Desktop apps
+    thunderbird
+    obsidian
+    telegram-desktop
+    spotify
+    discord
+    firefox
+    google-chrome
+    bitwarden
+    vscode.fhs
+    kazam
+    mpv
+    ckb-next
     (appimageTools.wrapType1 {
       name = "Cursor";
       version = "16";
@@ -230,24 +215,17 @@
     })
   ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
+  environment.variables.EDITOR = "nvim";
+  environment.localBinInPath = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [22 3000 80 443];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  networking.firewall.enable = false;
+  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -263,8 +241,6 @@
     driSupport = true;
     driSupport32Bit = true;
   };
-
-  # Load nvidia driver for Xorg and Wayland
 
   hardware.nvidia = {
     # Modesetting is required.
@@ -292,8 +268,6 @@
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
-  hardware.ckb-next.enable = true;
 
-  environment.variables.EDITOR = "nvim";
-  environment.localBinInPath = true;
+  hardware.ckb-next.enable = true;
 }
