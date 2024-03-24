@@ -171,6 +171,7 @@
     rustfmt
     cargo
     clang
+    gcc
     alejandra # .nix linter
     nix-prefetch-git
     jdk17
