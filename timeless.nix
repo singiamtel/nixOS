@@ -187,6 +187,8 @@
     wget
     git
     libnotify
+    gh
+    github-copilot-cli
 
     # Games
     lutris
