@@ -54,10 +54,11 @@
   };
 
   programs.zsh.enable = true;
+  virtualisation.docker.enable = true;
   users.users.sergio = {
     isNormalUser = true;
     description = "sergio";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "docker"];
     shell = pkgs.zsh;
     packages = with pkgs; [
     ];
@@ -176,6 +177,7 @@
     nix-prefetch-git
     jdk17
     python3
+    flyctl
 
     # CLI
     fzf
