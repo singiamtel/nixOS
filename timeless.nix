@@ -181,6 +181,7 @@
     flyctl
     sqlite
     gimp
+    flyctl
 
     # CLI
     fzf
