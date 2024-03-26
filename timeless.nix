@@ -179,6 +179,7 @@
     jdk17
     python3
     flyctl
+    sqlite
 
     # CLI
     fzf
