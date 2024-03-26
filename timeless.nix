@@ -180,6 +180,7 @@
     python3
     flyctl
     sqlite
+    gimp
 
     # CLI
     fzf
