@@ -171,6 +171,7 @@
     rustc
     rustfmt
     cargo
+    diesel-cli
     clang
     gcc
     alejandra # .nix linter
