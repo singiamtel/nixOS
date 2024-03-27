@@ -194,6 +194,7 @@
     git
     libnotify
     gh
+    busybox
 
     # Games
     lutris
