@@ -195,6 +195,7 @@
     libnotify
     gh
     busybox
+    eza
 
     # Games
     lutris
