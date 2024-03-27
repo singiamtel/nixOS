@@ -203,6 +203,7 @@
     busybox
     eza
     ripgrep
+    neovide
 
     # Games
     lutris
