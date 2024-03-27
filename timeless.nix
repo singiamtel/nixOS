@@ -198,6 +198,7 @@
     gh
     busybox
     eza
+    ripgrep
 
     # Games
     lutris
