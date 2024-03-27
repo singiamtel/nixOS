@@ -141,23 +141,16 @@
       '';
     };
 
+    programs.neovim = {
+      enable = true;
+      viAlias = true;
+      vimAlias = true;
+      defaultEditor = true;
+    };
+
     # The state version is required and should stay at the version you
     # originally installed.
     home.stateVersion = "23.11";
-  };
-
-  programs.neovim = {
-    enable = true;
-    viAlias = true;
-    vimAlias = true;
-    defaultEditor = true;
-    configure = {
-      customRC = ''
-               set undofile
-               set undodir=~/.vim/undodir
-        set clipboard^=unnamed,unnamedplus
-      '';
-    };
   };
 
   programs.steam = {
