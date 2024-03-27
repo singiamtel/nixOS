@@ -55,6 +55,10 @@
 
   programs.zsh.enable = true;
   virtualisation.docker.enable = true;
+
+  fonts.packages = with pkgs; [
+    (nerdfonts.override {fonts = ["FiraCode"];})
+  ];
   users.users.sergio = {
     isNormalUser = true;
     description = "sergio";
