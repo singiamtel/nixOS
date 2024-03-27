@@ -132,6 +132,8 @@
         alias e="nvim"
         alias v="nvim"
         alias -g G="grep -Ei"
+        alias ls="eza"
+        alias cat="bat"
       '';
     };
 
