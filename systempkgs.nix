@@ -36,6 +36,7 @@
     tmux
     gh
     ranger
+    ffmpeg
 
     # busybox
     eza
