@@ -138,6 +138,7 @@
         alias -g G="grep -Ei"
         alias ls="eza"
         alias cat="bat"
+        alias b="byobu"
       '';
     };
 
@@ -199,6 +200,7 @@
     ripgrep
     neovide
     byobu
+    tmux
 
     # Games
     lutris
