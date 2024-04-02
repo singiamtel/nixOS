@@ -23,9 +23,9 @@
     };
   };
   environment.interactiveShellInit = ''
-        alias lg='lazygit'
-        alias -g G='| grep -Ei'
-        alias b='byobu-tmux'
+    alias lg='lazygit'
+    alias -g G='| grep -Ei'
+    alias b='byobu-tmux'
     bindkey -M viins '^R' fzf_history_search
   '';
   users.defaultUserShell = pkgs.zsh;
