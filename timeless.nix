@@ -206,6 +206,7 @@
     byobu
     screen
     warp-terminal
+    glxinfo
 
     # Games
     lutris
