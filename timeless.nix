@@ -54,6 +54,10 @@
   };
 
   programs.zsh.enable = true;
+  programs.tmux = {
+    enable = true;
+    clock24 = true;
+  };
   virtualisation.docker.enable = true;
 
   fonts.packages = with pkgs; [
@@ -200,7 +204,6 @@
     ripgrep
     neovide
     byobu
-    tmux
 
     # Games
     lutris
