@@ -17,8 +17,10 @@
         "git"
         "sudo"
         "z"
+        "nix-zsh-completions"
+        "zsh-fzf-tab"
+        "zsh-fzf-history-search"
       ];
-
       theme = "ys";
     };
   };
