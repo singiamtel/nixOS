@@ -33,7 +33,9 @@
     wget
     git
     libnotify
+    tmux
     gh
+
     # busybox
     eza
     ripgrep
