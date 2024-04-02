@@ -37,6 +37,7 @@
     gh
     ranger
     ffmpeg
+    zx
 
     # busybox
     eza
