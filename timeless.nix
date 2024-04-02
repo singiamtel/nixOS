@@ -135,7 +135,7 @@
         alias lg="lazygit"
         alias e="nvim"
         alias v="nvim"
-        alias -g G="grep -Ei"
+        alias -g G="|grep -Ei"
         alias ls="eza"
         alias cat="bat"
         alias b="byobu-tmux"
