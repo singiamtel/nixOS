@@ -35,6 +35,7 @@
     libnotify
     tmux
     gh
+    ranger
 
     # busybox
     eza
