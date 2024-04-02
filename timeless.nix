@@ -16,6 +16,7 @@
     ./systempkgs.nix
     ./programs/nvidia.nix
     ./programs/zsh.nix
+    ./home-manager.nix
     ./programs/tmux.nix
   ];
 
@@ -65,7 +66,6 @@
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["FiraCode"];})
   ];
-  users.defaultUserShell = pkgs.zsh;
   users.users.sergio = {
     isNormalUser = true;
     description = "sergio";

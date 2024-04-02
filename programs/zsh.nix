@@ -47,4 +47,5 @@
     # plugins = [
     # ];
   };
+  users.defaultUserShell = pkgs.zsh;
 }
