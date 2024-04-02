@@ -155,7 +155,7 @@
 
     # The state version is required and should stay at the version you
     # originally installed.
-    home.stateVersion = "23.11";
+    home.stateVersion = "24.05";
   };
 
   programs.steam = {
@@ -205,6 +205,7 @@
     neovide
     byobu
     screen
+    warp-terminal
 
     # Games
     lutris
@@ -229,7 +230,7 @@
 
       src = fetchurl {
         url = "https://download.cursor.sh/linux/appImage/x64";
-        sha256 = "08q8lrs8bgyjpwvxswxix2m6n24k6zzbsqwnbachdf16b3l4c4iy";
+        sha256 = "1jc2x0k5m4jhg1c46fzs3ds17d0xfrjd1519afkgk99wr0zxamvm";
       };
     })
   ];
