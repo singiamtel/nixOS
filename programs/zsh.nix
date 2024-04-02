@@ -32,6 +32,8 @@
     alias v='nvim'
     alias r='ranger'
     # bindkey -M viins '^R' fzf_history_search
+    bindkey -v
+    bindkey '^e' edit-command-line
   '';
   users.defaultUserShell = pkgs.zsh;
 }
