@@ -207,6 +207,7 @@
     screen
     warp-terminal
     glxinfo
+    vulkan-tools
 
     # Games
     lutris
