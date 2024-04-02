@@ -32,16 +32,6 @@
   # services.xserver.videoDrivers = ["nvidia"];
   services.xserver.videoDrivers = lib.mkDefault ["nvidia"];
 
-  # Enable OpenGL
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-  };
-  hardware.opengl.extraPackages = with pkgs; [
-    vaapiVdpau
-  ];
-
   hardware.nvidia = {
     # Modesetting is required.
     modesetting.enable = true;
@@ -68,6 +58,15 @@
     nvidiaSettings = true;
     # package = config.boot.kernelPackages.nvidiaPackages.latest;
   };
+  # Enable OpenGL
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
+  hardware.opengl.extraPackages = with pkgs; [
+    vaapiVdpau
+  ];
 
   # Configure keymap in X11
   services.xserver.xkb = {
