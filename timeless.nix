@@ -168,7 +168,7 @@
     };
     programs.tmux = {
       enable = true;
-      shell = "zsh";
+      shell = "${pkgs.zsh}";
       terminal = "tmux-256color";
       historyLimit = 100000;
       plugins = with pkgs; [
