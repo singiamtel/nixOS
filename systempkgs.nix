@@ -10,6 +10,7 @@
     rustc
     rustfmt
     cargo
+    clippy
     diesel-cli
     clang
     gcc
