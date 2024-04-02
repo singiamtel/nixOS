@@ -204,6 +204,7 @@
     ripgrep
     neovide
     byobu
+    screen
 
     # Games
     lutris
