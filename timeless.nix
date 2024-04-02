@@ -59,12 +59,12 @@
     package = config.boot.kernelPackages.nvidiaPackages.latest;
   };
 
-  # Enable OpenGL
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-  };
+  # # Enable OpenGL
+  # hardware.opengl = {
+  #   enable = true;
+  #   driSupport = true;
+  #   driSupport32Bit = true;
+  # };
   hardware.opengl.extraPackages = with pkgs; [
     vaapiVdpau
   ];
