@@ -198,6 +198,7 @@
     eza
     ripgrep
     neovide
+    byobu
 
     # Games
     lutris
