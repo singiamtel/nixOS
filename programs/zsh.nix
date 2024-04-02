@@ -47,5 +47,10 @@
     # plugins = [
     # ];
   };
+  environment.interactiveShellInit = ''
+    alias lg='lazygit'
+    alias -g G='| grep -Ei'
+    alias b='byobu-tmux'
+  '';
   users.defaultUserShell = pkgs.zsh;
 }
