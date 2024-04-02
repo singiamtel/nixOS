@@ -168,7 +168,7 @@
     };
     programs.tmux = {
       enable = true;
-      # shell = "/run/current-system/sw/bin/zsh";
+      shell = lib.mkForce "${pkgs.zsh}/bin/zsh";
       terminal = "tmux-256color";
       historyLimit = 100000;
       plugins = with pkgs; [
