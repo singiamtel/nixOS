@@ -69,7 +69,7 @@
     isNormalUser = true;
     description = "sergio";
     extraGroups = ["networkmanager" "wheel" "docker"];
-    # shell = pkgs.zsh;
+    shell = pkgs.zsh;
     packages = with pkgs; [
     ];
   };
