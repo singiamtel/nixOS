@@ -138,7 +138,7 @@
         alias -g G="grep -Ei"
         alias ls="eza"
         alias cat="bat"
-        alias b="byobu"
+        alias b="byobu-tmux"
       '';
     };
 
