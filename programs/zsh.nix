@@ -17,9 +17,9 @@
         "git"
         "sudo"
         "z"
-        "nix-zsh-completions"
-        "zsh-fzf-tab"
-        "zsh-fzf-history-search"
+        # pkgs.nix-zsh-completions
+        # pkgs.zsh-fzf-tab
+        # pkgs.zsh-fzf-history-search
       ];
       theme = "ys";
     };
@@ -30,7 +30,7 @@
     alias b='byobu-tmux'
     alias e='nvim'
     alias v='nvim'
-    bindkey -M viins '^R' fzf_history_search
+    # bindkey -M viins '^R' fzf_history_search
   '';
   users.defaultUserShell = pkgs.zsh;
 }
