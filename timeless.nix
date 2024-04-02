@@ -239,7 +239,7 @@
     git
     libnotify
     gh
-    busybox
+    # busybox
     eza
     ripgrep
     neovide
