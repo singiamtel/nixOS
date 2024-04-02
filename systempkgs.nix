@@ -21,7 +21,6 @@
     sqlite
     gimp
     flyctl
-    alacritty
 
     # CLI
     fzf
