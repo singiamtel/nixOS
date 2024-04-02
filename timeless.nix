@@ -65,6 +65,7 @@
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["FiraCode"];})
   ];
+  users.defaultUserShell = pkgs.zsh;
   users.users.sergio = {
     isNormalUser = true;
     description = "sergio";
