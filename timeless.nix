@@ -12,6 +12,13 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
+  imports = [
+    ./systempkgs.nix
+    ./programs/nvidia.nix
+    ./programs/zsh.nix
+    ./programs/tmux.nix
+  ];
+
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enable networking
@@ -29,46 +36,6 @@
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
-  # services.xserver.videoDrivers = ["nvidia"];
-  services.xserver.videoDrivers = lib.mkDefault ["nvidia"];
-
-  hardware.nvidia = {
-    # Modesetting is required.
-    modesetting.enable = true;
-
-    # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
-    # Enable this if you have graphical corruption issues or application crashes after waking
-    # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead
-    # of just the bare essentials.
-    powerManagement.enable = false;
-
-    # Fine-grained power management. Turns off GPU when not in use.
-    # Experimental and only works on modern Nvidia GPUs (Turing or newer).
-    powerManagement.finegrained = false;
-
-    # Use the NVidia open source kernel module (not to be confused with the
-    # independent third-party "nouveau" open source driver).
-    # Support is limited to the Turing and later architectures. Full list of
-    # supported GPUs is at:
-    # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus
-    # Only available from driver 515.43.04+
-    # Currently alpha-quality/buggy, so false is currently the recommended setting.
-    open = true;
-
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.latest;
-  };
-
-  # # Enable OpenGL
-  # hardware.opengl = {
-  #   enable = true;
-  #   driSupport = true;
-  #   driSupport32Bit = true;
-  # };
-  hardware.opengl.extraPackages = with pkgs; [
-    vaapiVdpau
-  ];
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "gb";
@@ -102,180 +69,17 @@
     isNormalUser = true;
     description = "sergio";
     extraGroups = ["networkmanager" "wheel" "docker"];
-    shell = pkgs.zsh;
+    # shell = pkgs.zsh;
     packages = with pkgs; [
     ];
   };
-  home-manager.users.sergio = {pkgs, ...}: {
-    nixpkgs.config.allowUnfree = true;
-    home.packages = [
-      (pkgs.writeTextFile {
-        name = "cursor-desktop-entry";
-        destination = "/share/applications/cursor.desktop";
-        text = ''
-          [Desktop Entry]
-          Version=1.0
-          Type=Application
-          Name=Cursor
-          Exec=/run/current-system/sw/bin/Cursor
-          Icon=cursor-icon
-          Terminal=false
-          Categories=Utility;
-        '';
-      })
-    ];
-    programs.neovim = {
-      enable = true;
-      viAlias = true;
-      vimAlias = true;
-      defaultEditor = true;
-    };
-
-    # The state version is required and should stay at the version you
-    # originally installed.
-    home.stateVersion = "24.05";
-  };
-
-  # Enable zsh
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    syntaxHighlighting.enable = true;
-    enableAutosuggestions = true;
-    oh-my-zsh = {
-      enable = true;
-      plugins = [
-        "git"
-        "sudo"
-        "z"
-        "fzf-tab"
-        "zsh-fzf-history-search"
-        "zsh-autoswitch-virtualenv"
-
-        # {
-        #   name = "fzf-tab";
-        #   src = pkgs.fetchFromGitHub {
-        #     owner = "Aloxaf";
-        #     repo = "fzf-tab";
-        #     rev = "bf3ef5588af6d3bf7cc60f2ad2c1c95bca216241";
-        #     hash = "sha256-0/YOL1/G2SWncbLNaclSYUz7VyfWu+OB8TYJYm4NYkM=";
-        #   };
-        # }
-        # {
-        #   name = "zsh-fzf-history-search";
-        #   src = pkgs.fetchFromGitHub {
-        #     owner = "joshskidmore";
-        #     repo = "zsh-fzf-history-search";
-        #     rev = "bf3ef5588af6d3bf7cc60f2ad2c1c95bca216241";
-        #     hash = "sha256-0/YOL1/G2SWncbLNaclSYUz7VyfWu+OB8TYJYm4NYkM=";
-        #   };
-        # }
-        # {
-        #   name = "zsh-autoswitch-virtualenv";
-        #   src = pkgs.fetchFromGitHub {
-        #     owner = "MichaelAquilina";
-        #     repo = "zsh-autoswitch-virtualenv";
-        #     rev = "4ddc42d3d84bfb36fac1eb48e9e6de33a92fa4f1";
-        #     hash = "sha256-hwg9wDMU2XqJ5FQEwMVVaz0n+xZ8NI82tH9VhLfFRC4=";
-        #   };
-        # }
-      ];
-      theme = "ys";
-    };
-    # plugins = [
-    # ];
-  };
-  programs.tmux = {
-    enable = true;
-    # shell = lib.mkForce "${pkgs.zsh}/bin/zsh";
-    terminal = "tmux-256color";
-    historyLimit = 100000;
-    plugins = with pkgs; [
-      tmuxPlugins.better-mouse-mode
-    ];
-    extraConfig = ''
-    '';
-  };
-
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   };
 
-  environment.shells = with pkgs; [zsh bash];
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    # Development
-    nodejs
-    nodejs.pkgs.pnpm
-    bun
-    lazygit
-    rustc
-    rustfmt
-    cargo
-    diesel-cli
-    clang
-    gcc
-    alejandra # .nix linter
-    nix-prefetch-git
-    jdk17
-    python3
-    flyctl
-    sqlite
-    gimp
-    flyctl
-    alacritty
-
-    # CLI
-    fzf
-    xclip
-    bat
-    jq
-    neofetch
-    vim
-    wget
-    git
-    libnotify
-    gh
-    # busybox
-    eza
-    ripgrep
-    neovide
-    byobu
-    screen
-    warp-terminal
-    glxinfo
-    vulkan-tools
-
-    # Games
-    lutris
-    gnome3.adwaita-icon-theme
-
-    # Desktop apps
-    thunderbird
-    obsidian
-    telegram-desktop
-    spotify
-    discord
-    firefox
-    google-chrome
-    bitwarden
-    vscode.fhs
-    kazam
-    mpv
-    ckb-next
-    (appimageTools.wrapType1 {
-      name = "Cursor";
-      version = "16";
-
-      src = fetchurl {
-        url = "https://download.cursor.sh/linux/appImage/x64";
-        sha256 = "1jc2x0k5m4jhg1c46fzs3ds17d0xfrjd1519afkgk99wr0zxamvm";
-      };
-    })
-  ];
+  # environment.shells = with pkgs; [zsh bash];
 
   environment.variables.EDITOR = "nvim";
   environment.localBinInPath = true;
