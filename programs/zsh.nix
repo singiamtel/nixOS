@@ -30,6 +30,7 @@
     alias b='byobu-tmux'
     alias e='nvim'
     alias v='nvim'
+    alias r='ranger'
     # bindkey -M viins '^R' fzf_history_search
   '';
   users.defaultUserShell = pkgs.zsh;
