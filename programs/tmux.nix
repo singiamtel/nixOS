@@ -5,7 +5,7 @@
     terminal = "tmux-256color";
     historyLimit = 100000;
     plugins = with pkgs; [
-      tmuxPlugins.better-mouse-mode
+      # tmuxPlugins.better-mouse-mode
     ];
     extraConfig = ''
     '';
