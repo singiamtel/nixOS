@@ -182,6 +182,7 @@
     gimp
     flyctl
     alacritty
+    alacritty-theme
 
     # CLI
     fzf
