@@ -12,6 +12,14 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
+  imports = [
+    ./systempkgs.nix
+    ./programs/nvidia.nix
+    ./programs/zsh.nix
+    ./home-manager.nix
+    ./programs/tmux.nix
+  ];
+
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enable networking
@@ -63,9 +71,9 @@
     isNormalUser = true;
     description = "sergio";
     extraGroups = ["networkmanager" "wheel" "docker"];
-    # shell = pkgs.zsh;
-    packages = with pkgs; [
-    ];
+    shell = pkgs.zsh;
+    # packages = with pkgs; [
+    # ];
   };
   programs.steam = {
     enable = true;
@@ -73,10 +81,10 @@
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   };
 
-  environment.shells = with pkgs; [zsh bash];
+  # environment.shells = with pkgs; [zsh bash];
 
-  environment.variables.EDITOR = "nvim";
-  environment.localBinInPath = true;
+  # environment.variables.EDITOR = "nvim";
+  # environment.localBinInPath = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
@@ -95,13 +103,5 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
 
-  hardware.ckb-next.enable = true;
-
-  imports = [
-    ./systempkgs.nix
-    ./programs/nvidia.nix
-    ./programs/zsh.nix
-    # ./home-manager.nix
-    ./programs/tmux.nix
-  ];
+  # hardware.ckb-next.enable = true;
 }
