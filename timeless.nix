@@ -83,8 +83,8 @@
 
   # environment.shells = with pkgs; [zsh bash];
 
-  # environment.variables.EDITOR = "nvim";
-  # environment.localBinInPath = true;
+  environment.variables.EDITOR = "nvim";
+  environment.localBinInPath = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
@@ -103,5 +103,5 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
 
-  # hardware.ckb-next.enable = true;
+  hardware.ckb-next.enable = true;
 }
