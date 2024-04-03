@@ -12,14 +12,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
-  imports = [
-    ./systempkgs.nix
-    ./programs/nvidia.nix
-    ./programs/zsh.nix
-    ./home-manager.nix
-    ./programs/tmux.nix
-  ];
-
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enable networking
@@ -53,6 +45,7 @@
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  security.sudo.enable = true;
   security.sudo.wheelNeedsPassword = false;
   services.pipewire = {
     enable = true;
@@ -70,7 +63,7 @@
     isNormalUser = true;
     description = "sergio";
     extraGroups = ["networkmanager" "wheel" "docker"];
-    shell = pkgs.zsh;
+    # shell = pkgs.zsh;
     packages = with pkgs; [
     ];
   };
@@ -80,7 +73,7 @@
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   };
 
-  # environment.shells = with pkgs; [zsh bash];
+  environment.shells = with pkgs; [zsh bash];
 
   environment.variables.EDITOR = "nvim";
   environment.localBinInPath = true;
@@ -103,4 +96,12 @@
   system.stateVersion = "23.11"; # Did you read the comment?
 
   hardware.ckb-next.enable = true;
+
+  imports = [
+    ./systempkgs.nix
+    ./programs/nvidia.nix
+    ./programs/zsh.nix
+    # ./home-manager.nix
+    ./programs/tmux.nix
+  ];
 }
