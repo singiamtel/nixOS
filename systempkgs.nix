@@ -38,6 +38,8 @@
     ranger
     ffmpeg
     zx
+    gdu
+    bottom
 
     # busybox
     eza
