@@ -7,6 +7,7 @@
   nixpkgs.config.allowUnfree = true;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
+  system.autoUpgrade.enable = true;
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
