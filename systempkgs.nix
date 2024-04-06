@@ -40,6 +40,7 @@
     zx
     gdu
     bottom
+    magic-wormhole
 
     # busybox
     eza
