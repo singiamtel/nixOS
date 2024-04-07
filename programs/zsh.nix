@@ -35,4 +35,5 @@
     KEYTIMEOUT=1
   '';
   users.defaultUserShell = pkgs.zsh;
+  programs.direnv.enable = true;
 }
