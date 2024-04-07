@@ -41,6 +41,7 @@
     gdu
     bottom
     magic-wormhole
+    htop
 
     # busybox
     eza
