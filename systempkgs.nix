@@ -56,7 +56,7 @@
     # Games
     lutris
     gnome3.adwaita-icon-theme
-    minecraft
+    prismlauncher
 
     # Desktop apps
     thunderbird
