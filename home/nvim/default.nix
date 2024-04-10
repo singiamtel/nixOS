@@ -7,7 +7,7 @@
     inputs.nixvim.homeManagerModules.nixvim
     ./options.nix
     #./bufferline.nix
-    # ./telescope.nix
+    ./telescope.nix
     # ./nvim-tree.nix
     # ./lightline.nix
     ./git.nix
@@ -32,7 +32,6 @@
 
     plugins = {
       lualine.enable = true;
-      telescope.enable = true;
       oil.enable = true;
       treesitter.enable = true;
       luasnip.enable = true;
