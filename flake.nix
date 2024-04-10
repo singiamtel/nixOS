@@ -1,7 +1,6 @@
 # /etc/nixos/flake.nix
 {
   description = "flake config for timeless";
-
   inputs = {
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-23.11";
@@ -12,7 +11,7 @@
     };
     nixvim = {
       url = "github:nix-community/nixvim/nixos-23.11";
-      follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -27,6 +26,7 @@
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
+          {_module.args = {inherit inputs;};}
           home-manager.nixosModules.home-manager
           {
             home-manager = {

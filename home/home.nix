@@ -1,6 +1,16 @@
-{config, pkgs, ...} : {
-    nixpkgs.config.allowUnfree = true;
-    home.packages = [
+{
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    ./nvim
+  ];
+  #nixpkgs.config.allowUnfree = true;
+  home = {
+    username = "sergio";
+    homeDirectory = "/home/sergio";
+    packages = [
       (pkgs.writeTextFile {
         name = "cursor-desktop-entry";
         destination = "/share/applications/cursor.desktop";
@@ -16,21 +26,13 @@
         '';
       })
     ];
-    programs.atuin = {
-      enable = true;
-    };
- programs.nixvim = {
-   enable = true;
+    stateVersion = "23.11";
+  };
+  programs.atuin = {
+    enable = true;
+  };
 
-   colorschemes.gruvbox.enable = true;
-   plugins.lightline.enable = true;
-
-   options = {
-     number = true;
-   };
- };
-
-    # The state version is required and should stay at the version you
-    # originally installed.
-    home.stateVersion = "23.11";
+  # The state version is required and should stay at the version you
+  # originally installed.
+  programs.home-manager.enable = true;
 }

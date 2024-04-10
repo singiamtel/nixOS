@@ -9,9 +9,9 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
   system.autoUpgrade.enable = true;
 
-              nixpkgs.config.permittedInsecurePackages = [
-                "electron-25.9.0"
-              ];
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-25.9.0"
+  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -63,7 +63,7 @@
 
   virtualisation.docker.enable = true;
 
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["FiraCode"];})
   ];
 
