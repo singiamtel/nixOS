@@ -5,23 +5,23 @@
 }: {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
-    #./options.nix
+    ./options.nix
     #./bufferline.nix
     # ./telescope.nix
     # ./nvim-tree.nix
     # ./lightline.nix
-    # ./git.nix
+    ./git.nix
     # ./cmp.nix
     # ./none-ls.nix
     # ./wilder.nix
     # ./lsp.nix
-    # ./treesitter.nix
+    ./treesitter.nix
     # ./toggleterm.nix
     ./copilot.nix
     # ./obsidian.nix
-    # ./whichkey.nix
+    ./whichkey.nix
     # ./alpha.nix
-    # ./keymaps.nix
+    ./keymaps.nix
   ];
 
   programs.nixvim = {
