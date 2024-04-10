@@ -4,7 +4,6 @@
     updatetime = 50; # Faster completion
 
     number = true;
-    relativenumber = true;
 
     autoindent = true;
     clipboard = "unnamed,unnamedplus";
