@@ -27,7 +27,7 @@
   programs.nixvim = {
     enable = true;
     colorschemes.catppuccin.enable = true;
-    colorschemes.catppuccin.transparentBackground = true;
+    # colorschemes.catppuccin.transparentBackground = true;
 
     plugins = {
       lualine.enable = true;
