@@ -17,7 +17,7 @@
     # ./lsp.nix
     # ./treesitter.nix
     # ./toggleterm.nix
-    # ./copilot.nix
+    ./copilot.nix
     # ./obsidian.nix
     # ./whichkey.nix
     # ./alpha.nix
