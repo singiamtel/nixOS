@@ -28,6 +28,8 @@
         alias b='byobu-tmux'
         alias e='nvim'
         alias v='nvim'
+        alias vi='nvim'
+        alias vim='nvim'
         alias r='ranger'
         bindkey -v
           source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
