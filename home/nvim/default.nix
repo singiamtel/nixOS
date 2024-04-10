@@ -14,7 +14,7 @@
     ./cmp.nix
     # ./none-ls.nix
     ./wilder.nix
-    # ./lsp.nix
+    ./lsp.nix
     ./treesitter.nix
     # ./toggleterm.nix
     ./copilot.nix
