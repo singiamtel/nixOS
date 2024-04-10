@@ -11,9 +11,9 @@
     # ./nvim-tree.nix
     # ./lightline.nix
     ./git.nix
-    # ./cmp.nix
+    ./cmp.nix
     # ./none-ls.nix
-    # ./wilder.nix
+    ./wilder.nix
     # ./lsp.nix
     ./treesitter.nix
     # ./toggleterm.nix
@@ -35,21 +35,6 @@
       oil.enable = true;
       treesitter.enable = true;
       luasnip.enable = true;
-
-      lsp = {
-        enable = true;
-        servers = {
-          tsserver.enable = true;
-          lua-ls.enable = true;
-          pylsp.enable = true;
-          nil_ls.enable = true;
-          rust-analyzer = {
-            enable = true;
-            installCargo = true;
-            installRustc = true;
-          };
-        };
-      };
 
       # nvim-cmp = {
       #   enable = true;
