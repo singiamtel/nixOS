@@ -20,12 +20,16 @@
     programs.atuin = {
       enable = true;
     };
-    programs.neovim = {
-      enable = true;
-      viAlias = true;
-      vimAlias = true;
-      defaultEditor = true;
-    };
+    # programs.nixvim = {
+    #   enable = true;
+    #
+    #   colorschemes.gruvbox.enable = true;
+    #   plugins.lightline.enable = true;
+    #
+    #   options = {
+    #     number = true;
+    #   };
+    # };
 
     # The state version is required and should stay at the version you
     # originally installed.

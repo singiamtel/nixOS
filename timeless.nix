@@ -14,6 +14,7 @@
   #boot.kernelPackages = pkgs.linuxPackages_zen;
 
   imports = [
+    # nixvim.nixosModules.nixvim
     ./systempkgs.nix
     ./programs/nvidia.nix
     ./programs/zsh.nix
