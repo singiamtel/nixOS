@@ -9,16 +9,17 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
   system.autoUpgrade.enable = true;
 
+              nixpkgs.config.permittedInsecurePackages = [
+                "electron-25.9.0"
+              ];
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  #boot.kernelPackages = pkgs.linuxPackages_zen;
 
   imports = [
-    # nixvim.nixosModules.nixvim
     ./systempkgs.nix
     ./programs/nvidia.nix
     ./programs/zsh.nix
-    ./home-manager.nix
     ./programs/tmux.nix
   ];
 
@@ -34,9 +35,14 @@
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
 
-  services.xserver.xkb = {
+  #services.xserver.xkb = {
+  #  layout = "gb";
+  #  variant = "";
+  #};
+
+  services.xserver = {
     layout = "gb";
-    variant = "";
+    xkbVariant = "";
   };
 
   console.keyMap = "uk";
@@ -57,7 +63,7 @@
 
   virtualisation.docker.enable = true;
 
-  fonts.packages = with pkgs; [
+  fonts.fonts = with pkgs; [
     (nerdfonts.override {fonts = ["FiraCode"];})
   ];
 

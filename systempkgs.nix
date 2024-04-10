@@ -44,12 +44,11 @@
     htop
 
     # busybox
-    eza
+    #eza
     ripgrep
     neovide
     byobu
     screen
-    warp-terminal
     glxinfo
     vulkan-tools
 
@@ -65,9 +64,9 @@
     spotify
     discord
     firefox
-    google-chrome
+    # google-chrome
     bitwarden
-    vscode.fhs
+    #vscode.fhs
     kazam
     mpv
     ckb-next
@@ -77,7 +76,8 @@
 
       src = fetchurl {
         url = "https://download.cursor.sh/linux/appImage/x64";
-        sha256 = "1jc2x0k5m4jhg1c46fzs3ds17d0xfrjd1519afkgk99wr0zxamvm";
+        sha256 = "sha256-FWKVmM+8NZ5EfV4ZbDPbho+2kfZZzut1h81sF8XM8fw=";
+
       };
     })
   ];

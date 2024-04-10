@@ -1,5 +1,4 @@
-{
-  home-manager.users.sergio = {pkgs, ...}: {
+{config, pkgs, ...} : {
     nixpkgs.config.allowUnfree = true;
     home.packages = [
       (pkgs.writeTextFile {
@@ -20,19 +19,18 @@
     programs.atuin = {
       enable = true;
     };
-    # programs.nixvim = {
-    #   enable = true;
-    #
-    #   colorschemes.gruvbox.enable = true;
-    #   plugins.lightline.enable = true;
-    #
-    #   options = {
-    #     number = true;
-    #   };
-    # };
+ programs.nixvim = {
+   enable = true;
+
+   colorschemes.gruvbox.enable = true;
+   plugins.lightline.enable = true;
+
+   options = {
+     number = true;
+   };
+ };
 
     # The state version is required and should stay at the version you
     # originally installed.
-    home.stateVersion = "24.05";
-  };
+    home.stateVersion = "23.11";
 }
