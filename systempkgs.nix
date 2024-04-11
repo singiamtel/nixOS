@@ -67,7 +67,7 @@
     firefox
     # google-chrome
     bitwarden
-    #vscode.fhs
+    vscode.fhs
     kazam
     mpv
     ckb-next
