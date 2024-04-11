@@ -52,6 +52,7 @@
     screen
     glxinfo
     vulkan-tools
+    espanso
 
     # Games
     lutris
@@ -81,4 +82,5 @@
       };
     })
   ];
+  services.espanso.enable = true;
 }
