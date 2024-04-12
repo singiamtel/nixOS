@@ -5,6 +5,7 @@
       tsserver.enable = true;
       lua-ls.enable = true;
       pyright.enable = true;
+      clangd.enable = true;
       nil_ls.enable = true;
       rust-analyzer = {
         enable = true;
