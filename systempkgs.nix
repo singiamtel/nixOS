@@ -23,6 +23,7 @@
     sqlite
     gimp
     flyctl
+    parallel
 
     # CLI
     fzf
