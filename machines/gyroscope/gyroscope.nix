@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: {
-  networking.hostName = "timeless"; # Define your hostname.
+  networking.hostName = "gyroscope"; # Define your hostname.
   nixpkgs.config.allowUnfree = true;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -34,35 +34,10 @@
 
   services.xserver.enable = true;
 
-  # KDE Plasma
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
-
-  #services.xserver.xkb = {
-  #  layout = "gb";
-  #  variant = "";
-  #};
-
-  services.xserver = {
-    layout = "gb";
-    xkbVariant = "";
-  };
+  # Not KDE Plasma
+  programs.hyprland.enable = true;
 
   console.keyMap = "uk";
-
-  services.printing.enable = true;
-
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  security.sudo.enable = true;
-  security.sudo.wheelNeedsPassword = false;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
 
   virtualisation.docker.enable = true;
 
@@ -70,30 +45,21 @@
     (nerdfonts.override {fonts = ["FiraCode"];})
   ];
 
-  hardware.ckb-next.enable = true;
-
   users.users.sergio = {
     isNormalUser = true;
     description = "sergio";
     extraGroups = ["networkmanager" "wheel" "docker"];
     shell = pkgs.zsh;
-    packages = with pkgs; [
-      ckb-next
-      kazam
-    ];
   };
 
-  # environment.shells = with pkgs; [zsh bash];
+  environment.shells = with pkgs; [zsh bash];
 
   environment = {
     variables.EDITOR = "nvim";
     localBinInPath = true;
   };
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
-  networking.firewall.allowedTCPPorts = [22 3000 8000 80 443];
+  networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -102,4 +68,6 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
+  environment.systemPackages = with pkgs; [
+  ];
 }
