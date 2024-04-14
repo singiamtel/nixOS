@@ -21,7 +21,6 @@
     ./hardware-configuration.nix
     ../../programs/desktop-apps.nix
     ../../programs/development.nix
-    ../../programs/games.nix
     ../../programs/config/tmux.nix
     ../../programs/config/zsh.nix
   ];
