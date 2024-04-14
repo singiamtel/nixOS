@@ -80,6 +80,17 @@
     packages = with pkgs; [
       ckb-next
       kazam
+      spotify
+      discord
+      thunderbird
+      obsidian
+      telegram-desktop
+      google-chrome
+      vscode.fhs
+      bitwarden
+      kazam
+      mpv
+      ckb-next
     ];
   };
 

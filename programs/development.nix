@@ -44,17 +44,6 @@
     killall
 
     # Desktop apps
-    thunderbird
-    obsidian
-    telegram-desktop
-    spotify
-    discord
     firefox
-    google-chrome
-    bitwarden
-    vscode.fhs
-    kazam
-    mpv
-    ckb-next
   ];
 }
