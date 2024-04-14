@@ -8,16 +8,12 @@
       enable = true;
       customPkgs = [
         pkgs.nix-zsh-completions
-        # pkgs.zsh-fzf-history-search
       ];
 
       plugins = [
         "git"
         "sudo"
         "z"
-        # pkgs.nix-zsh-completions
-        # pkgs.zsh-fzf-tab
-        # pkgs.zsh-fzf-history-search
       ];
       theme = "ys";
     };
@@ -25,7 +21,6 @@
   environment.interactiveShellInit = ''
         alias lg='lazygit'
         alias -g G='| grep -Ei'
-        alias b='byobu-tmux'
         alias e='nvim'
         alias v='nvim'
         alias vi='nvim'

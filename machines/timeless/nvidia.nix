@@ -43,4 +43,9 @@
   hardware.opengl.extraPackages = with pkgs; [
     vaapiVdpau
   ];
+
+  environment.systemPackages = with pkgs; [
+    glxinfo
+    vulkan-tools
+  ];
 }

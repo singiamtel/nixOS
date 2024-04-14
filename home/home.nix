@@ -28,11 +28,9 @@
     ];
     stateVersion = "23.11";
   };
-  programs.atuin = {
-    enable = true;
-  };
+  # programs.atuin = {
+  #   enable = true;
+  # };
 
-  # The state version is required and should stay at the version you
-  # originally installed.
   programs.home-manager.enable = true;
 }

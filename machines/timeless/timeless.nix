@@ -4,6 +4,7 @@
   pkgs,
   ...
 }: {
+  networking.hostName = "timeless"; # Define your hostname.
   nixpkgs.config.allowUnfree = true;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -17,10 +18,13 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   imports = [
-    ./systempkgs.nix
-    ./programs/nvidia.nix
-    ./programs/zsh.nix
-    ./programs/tmux.nix
+    ./hardware-configuration.nix
+    ./nvidia.nix
+    ../../programs/desktop-apps.nix
+    ../../programs/development.nix
+    ../../programs/games.nix
+    ../../programs/config/tmux.nix
+    ../../programs/config/zsh.nix
   ];
 
   networking.networkmanager.enable = true;
@@ -77,12 +81,6 @@
     # ];
   };
 
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-  };
-
   # environment.shells = with pkgs; [zsh bash];
 
   environment = {
@@ -102,4 +100,8 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
+  environment.systemPackages = with pkgs; [
+    ckb-next
+    kazam
+  ];
 }

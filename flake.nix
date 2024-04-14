@@ -25,8 +25,7 @@
       timeless = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./configuration.nix
-          {_module.args = {inherit inputs;};}
+          ./machines/timeless/timeless.nix
           home-manager.nixosModules.home-manager
           {
             home-manager = {
