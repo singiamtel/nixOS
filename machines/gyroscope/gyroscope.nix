@@ -51,6 +51,7 @@ environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /
         i3blocks #if you are planning on using i3blocks over i3status
      ];
     };
+    };
 
   console.keyMap = "uk";
 
