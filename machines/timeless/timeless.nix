@@ -91,15 +91,15 @@
       kazam
       mpv
       ckb-next
-      # (appimageTools.wrapType1 {
-      #   name = "Cursor";
-      #   version = "16";
+      (appimageTools.wrapType1 {
+        name = "Cursor";
+        version = "16";
 
-      #   src = fetchurl {
-      #     url = "https://download.cursor.sh/linux/appImage/x64";
-      #     sha256 = "sha256-FWKVmM+8NZ5EfV4ZbDPbho+2kfZZzut1h81sF8XM8fw=";
-      #   };
-      # })
+        src = fetchurl {
+          url = "https://download.cursor.sh/linux/appImage/x64";
+          sha256 = "sha256-FWKVmM+8NZ5EfV4ZbDPbho+2kfZZzut1h81sF8XM8fw=";
+        };
+      })
     ];
   };
 
