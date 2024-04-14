@@ -55,7 +55,7 @@
 
         src = fetchurl {
           url = "https://download.cursor.sh/linux/appImage/x64";
-          sha256 = "sha256-FWKVmM+8NZ5EfV4ZbDPbho+2kfZZzut1h81sF8XM8fw=";
+          sha256 = "sha256-WWKVmM+8NZ5EfV4ZbDPbho+2kfZZzut1h81sF8XM8fw=";
         };
       })
     ];
