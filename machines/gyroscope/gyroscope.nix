@@ -19,7 +19,6 @@
 
   imports = [
     ./hardware-configuration.nix
-    ./nvidia.nix
     ../../programs/desktop-apps.nix
     ../../programs/development.nix
     ../../programs/games.nix

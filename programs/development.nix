@@ -41,6 +41,7 @@
     eza
     ripgrep
     neovide
+    killall
 
     # Desktop apps
     thunderbird
