@@ -13,6 +13,9 @@
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"
   ];
+  services.qemuGuest.enable = true;
+  services.spice-vdagentd.enable = true;
+  services.spice-webdavd.enable = true;
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -36,10 +39,19 @@ environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /
 
     desktopManager = {
       xterm.enable = false;
+      wallpaper.mode = "fill";
     };
+    #videoDrivers = ["qxl"];
    
     displayManager = {
         defaultSession = "none+i3";
+      lightdm.enable = true;
+
+      # AARCH64: For now, on Apple Silicon, we must manually set the
+      # display resolution. This is a known issue with VMware Fusion.
+      sessionCommands = ''
+        ${pkgs.xorg.xset}/bin/xset r rate 200 40
+      '';
     };
 
     windowManager.i3 = {
@@ -51,6 +63,8 @@ environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /
         i3blocks #if you are planning on using i3blocks over i3status
      ];
     };
+    layout = "us";
+    dpi = 150;
     };
 
   console.keyMap = "uk";
@@ -96,5 +110,6 @@ environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
   environment.systemPackages = with pkgs; [
+    konsole
   ];
 }

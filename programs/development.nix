@@ -43,7 +43,5 @@
     neovide
     killall
 
-    # Desktop apps
-    firefox
   ];
 }
