@@ -35,6 +35,8 @@
       oil.enable = true;
       treesitter.enable = true;
       luasnip.enable = true;
+      commentary.enable = true;
+      surround.enable = true;
 
       # nvim-cmp = {
       #   enable = true;
