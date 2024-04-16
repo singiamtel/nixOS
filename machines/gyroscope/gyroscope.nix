@@ -33,7 +33,7 @@
   time.timeZone = "Europe/Zurich";
   i18n.defaultLocale = "en_GB.UTF-8";
 
-environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw 
+  environment.pathsToLink = ["/libexec"]; # links /libexec from derivations to /run/current-system/sw
   services.xserver = {
     enable = true;
 
@@ -42,9 +42,9 @@ environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /
       wallpaper.mode = "fill";
     };
     #videoDrivers = ["qxl"];
-   
+
     displayManager = {
-        defaultSession = "none+i3";
+      defaultSession = "none+i3";
       lightdm.enable = true;
 
       # AARCH64: For now, on Apple Silicon, we must manually set the
@@ -61,11 +61,11 @@ environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /
         i3status # gives you the default i3 status bar
         i3lock #default i3 screen locker
         i3blocks #if you are planning on using i3blocks over i3status
-     ];
+      ];
     };
     layout = "us";
     dpi = 150;
-    };
+  };
 
   console.keyMap = "uk";
 

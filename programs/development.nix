@@ -42,6 +42,5 @@
     ripgrep
     neovide
     killall
-
   ];
 }
