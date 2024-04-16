@@ -97,6 +97,7 @@
         version = "16";
 
         src = fetchurl {
+          # This sucks, why do they not provide a versioned URL?
           url = "https://download.cursor.sh/linux/appImage/x64";
           sha256 = "sha256-AZpMrtRaDTd72TgSmkN2irMIuC7LgZ4rpBK8+vApcq0=";
         };

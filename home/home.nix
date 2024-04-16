@@ -14,12 +14,13 @@
       (pkgs.writeTextFile {
         name = "cursor-desktop-entry";
         destination = "/share/applications/cursor.desktop";
+        # This also sucks, idk how to get the binary path
         text = ''
           [Desktop Entry]
           Version=1.0
           Type=Application
           Name=Cursor
-          Exec=/run/current-system/sw/bin/Cursor
+          Exec=/etc/profiles/per-user/sergio/bin/Cursor
           Icon=cursor-icon
           Terminal=false
           Categories=Utility;
