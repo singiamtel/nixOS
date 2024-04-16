@@ -1,6 +1,6 @@
 {
   programs.nixvim.globals.mapleader = " ";
-  programs.nixvim.options = {
+  programs.nixvim.opts = {
     updatetime = 50; # Faster completion
 
     number = true;

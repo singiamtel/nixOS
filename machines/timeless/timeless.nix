@@ -35,18 +35,18 @@
   services.xserver.enable = true;
 
   # KDE Plasma
-  services.xserver.displayManager.sddm.enable = true;
+  services.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
 
-  #services.xserver.xkb = {
-  #  layout = "gb";
-  #  variant = "";
-  #};
-
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "gb";
-    xkbVariant = "";
+    variant = "";
   };
+
+  #services.xserver = {
+  #  layout = "gb";
+  #  xkbVariant = "";
+  #};
 
   console.keyMap = "uk";
 
