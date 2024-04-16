@@ -89,6 +89,7 @@
       vscode.fhs
       bitwarden
       kazam
+      element-desktop
       mpv
       ckb-next
       (appimageTools.wrapType1 {
