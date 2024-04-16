@@ -43,5 +43,7 @@
     ripgrep
     neovide
     killall
+    zip
+    unzip
   ];
 }
