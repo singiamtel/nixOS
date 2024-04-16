@@ -30,6 +30,9 @@
     colorschemes.catppuccin.settings.flavour = "latte";
     # colorschemes.catppuccin.transparentBackground = true;
 
+    opts = {
+      formatoptions = "qlnj";
+    };
     plugins = {
       lualine.enable = true;
       oil.enable = true;
