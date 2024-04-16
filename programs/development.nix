@@ -11,6 +11,7 @@
     gcc
     alejandra
     nix-prefetch-git
+    jdk8
     jdk17
     python3
     flyctl
