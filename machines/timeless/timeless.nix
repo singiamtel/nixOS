@@ -35,12 +35,16 @@
   services.xserver.enable = true;
 
   # KDE Plasma
-  services.displayManager.sddm.enable = true;
+  services.displayManager = {
+    sddm.enable = true;
+  };
   services.xserver.desktopManager.plasma5.enable = true;
 
-  services.xserver.xkb = {
-    layout = "gb";
-    variant = "";
+  services.xserver = {
+    xkb = {
+      layout = "gb";
+      variant = "";
+    };
   };
 
   #services.xserver = {

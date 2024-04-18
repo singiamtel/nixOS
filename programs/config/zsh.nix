@@ -26,6 +26,7 @@
         alias vi='nvim'
         alias vim='nvim'
         alias r='ranger'
+        alias ka='killall'
         bindkey -v
           source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
           source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
