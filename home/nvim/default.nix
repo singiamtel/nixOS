@@ -51,5 +51,12 @@
       #   ];
       # };
     };
+    keymaps = [
+      {
+        mode = "n";
+        key = "<C-s>";
+        action = "<cmd>w<CR>";
+      }
+    ];
   };
 }
