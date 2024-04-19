@@ -30,6 +30,7 @@
   fileSystems."/hdd" = {
     device = "/dev/disk/by-uuid/6BE8-8F22";
     fsType = "exfat";
+    options = ["nofail" "users" "x-gvfs-show"];
   };
 
   swapDevices = [];
