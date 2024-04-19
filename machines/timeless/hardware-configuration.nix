@@ -30,7 +30,7 @@
   fileSystems."/hdd" = {
     device = "/dev/disk/by-uuid/6BE8-8F22";
     fsType = "exfat";
-    options = ["umask=000"];
+    options = ["uid=1000" "gid=100" "dmask=007" "fmask=117"];
   };
 
   swapDevices = [];
