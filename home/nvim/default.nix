@@ -40,6 +40,7 @@
       luasnip.enable = true;
       commentary.enable = true;
       surround.enable = true;
+      auto-session.enable = true;
 
       # nvim-cmp = {
       #   enable = true;
