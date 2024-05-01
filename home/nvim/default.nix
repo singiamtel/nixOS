@@ -19,9 +19,9 @@
     # ./toggleterm.nix
     ./copilot.nix
     # ./obsidian.nix
-    ./whichkey.nix
     # ./alpha.nix
     ./keymaps.nix
+    ./whichkey.nix
   ];
 
   programs.nixvim = {
