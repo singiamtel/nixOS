@@ -41,6 +41,11 @@
       commentary.enable = true;
       surround.enable = true;
       auto-session.enable = true;
+      alpha = {
+        enable = true;
+        theme = "dashboard";
+      };
+      bufferline.enable = true;
 
       # nvim-cmp = {
       #   enable = true;
