@@ -7,6 +7,11 @@
         action = "git_files";
         options.desc = "Telescope Git Files";
       };
+
+      "<leader>ff" = {
+        action = "find_files";
+        options.desc = "Telescope Find Files";
+      };
     };
     extensions.fzf-native = {enable = true;};
   };
