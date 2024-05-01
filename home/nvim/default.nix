@@ -27,7 +27,7 @@
   programs.nixvim = {
     enable = true;
     colorschemes.catppuccin.enable = true;
-    colorschemes.catppuccin.settings.flavour = "latte";
+    colorschemes.catppuccin.settings.flavour = "mocha";
     # colorschemes.catppuccin.transparentBackground = true;
 
     opts = {
