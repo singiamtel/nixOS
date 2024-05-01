@@ -33,5 +33,17 @@
       key = "<leader>oi";
       action = "<cmd>ObsidianPasteImg<cr>";
     }
+
+    {
+      mode = "n";
+      key = "<leader>gt";
+      action = "<cmd>bn<cr>";
+    }
+
+    {
+      mode = "n";
+      key = "<leader>gT";
+      action = "<cmd>bp<cr>";
+    }
   ];
 }
