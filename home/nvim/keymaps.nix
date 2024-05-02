@@ -5,6 +5,10 @@
       action = "<CMD>Neotree toggle<CR>";
     }
     {
+      key = "<F2>";
+      action = "<CMD>lua vim.lsp.buf.rename()<CR>";
+    }
+    {
       key = "<space>fm";
       action = "<CMD>lua vim.lsp.buf.format()<CR>";
     }
