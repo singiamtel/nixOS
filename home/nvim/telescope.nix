@@ -12,6 +12,10 @@
         action = "find_files";
         options.desc = "Telescope Find Files";
       };
+      "<leader>fe" = {
+        action = "diagnostics";
+        options.desc = "Telescope Find Errors";
+      };
     };
     extensions.fzf-native = {enable = true;};
   };
