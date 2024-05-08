@@ -41,6 +41,8 @@
       commentary.enable = true;
       surround.enable = true;
       auto-session.enable = true;
+      fugitive.enable = true;
+
       alpha = {
         enable = true;
         theme = "dashboard";
