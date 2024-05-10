@@ -37,7 +37,10 @@
       lualine.enable = true;
       oil.enable = true;
       treesitter.enable = true;
-      luasnip.enable = true;
+      luasnip = {
+        enable = true;
+        fromLua = [{paths = ./snippets;}];
+      };
       commentary.enable = true;
       surround.enable = true;
       auto-session.enable = true;
@@ -59,6 +62,9 @@
       #   ];
       # };
     };
+    extraPlugins = with pkgs.vimPlugins; [
+      vim-snippets
+    ];
     keymaps = [
       {
         mode = "n";
