@@ -40,7 +40,7 @@
       luasnip = {
         enable = true;
       };
-      commentary.enable = true;
+      comment.enable = true;
       surround.enable = true;
       auto-session.enable = true;
       fugitive.enable = true;

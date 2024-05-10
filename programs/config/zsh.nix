@@ -19,18 +19,22 @@
     };
   };
   environment.interactiveShellInit = ''
-        alias lg='lazygit'
-        alias -g G='| grep -Ei'
-        alias e='nvim'
-        alias v='nvim'
-        alias vi='nvim'
-        alias vim='nvim'
-        alias r='ranger'
-        alias ka='killall'
-        bindkey -v
-          source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
-          source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+    alias lg='lazygit'
+    alias -g G='| grep -Ei'
+    alias e='nvim'
+    alias v='nvim'
+    alias vi='nvim'
+    alias vim='nvim'
+    alias r='ranger'
+    alias ka='killall'
+
+    bindkey -v
     KEYTIMEOUT=1
+
+    source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
+    source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+    setopt extended_history
   '';
   users.defaultUserShell = pkgs.zsh;
   programs.direnv.enable = true;
