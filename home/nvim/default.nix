@@ -39,7 +39,6 @@
       treesitter.enable = true;
       luasnip = {
         enable = true;
-        fromLua = [{paths = ./snippets;}];
       };
       commentary.enable = true;
       surround.enable = true;
@@ -65,6 +64,10 @@
     extraPlugins = with pkgs.vimPlugins; [
       vim-snippets
     ];
+    extraConfigLuaPre = ''
+      luasnip = require("luasnip")
+      require("luasnip.loaders.from_snipmate").lazy_load()
+    '';
     keymaps = [
       {
         mode = "n";
