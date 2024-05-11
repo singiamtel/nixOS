@@ -25,6 +25,7 @@
     bat
     jq
     neofetch
+    cloc
     vim
     wget
     git
