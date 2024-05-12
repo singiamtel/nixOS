@@ -92,6 +92,7 @@
       google-chrome
       vscode.fhs
       bitwarden
+      pgadmin
       kazam
       element-desktop
       mpv
