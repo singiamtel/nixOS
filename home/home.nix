@@ -10,8 +10,8 @@
   home = {
     username = "sergio";
     homeDirectory = "/home/sergio";
-    packages = [
-      (pkgs.writeTextFile {
+    packages = with pkgs; [
+      (writeTextFile {
         name = "cursor-desktop-entry";
         destination = "/share/applications/cursor.desktop";
         # This also sucks, idk how to get the binary path
@@ -26,6 +26,7 @@
           Categories=Utility;
         '';
       })
+      deluge
     ];
     stateVersion = "23.11";
   };
