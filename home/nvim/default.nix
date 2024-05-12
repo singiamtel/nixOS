@@ -44,6 +44,7 @@
       surround.enable = true;
       auto-session.enable = true;
       fugitive.enable = true;
+      nvim-tree.enable = true;
 
       alpha = {
         enable = true;
