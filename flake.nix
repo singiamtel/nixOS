@@ -1,6 +1,6 @@
 # /etc/nixos/flake.nix
 {
-  description = "flake config for timeless";
+  description = "flake config";
   inputs = {
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
