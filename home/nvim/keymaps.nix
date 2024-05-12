@@ -40,6 +40,12 @@
 
     {
       mode = "n";
+      key = "<c-n>";
+      action = "<cmd>NvimTreeToggle<cr>";
+    }
+
+    {
+      mode = "n";
       key = "<leader>gt";
       action = "<cmd>bn<cr>";
     }
