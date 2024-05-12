@@ -87,12 +87,12 @@
       spotify
       discord
       thunderbird
+      dbeaver
       obsidian
       telegram-desktop
       google-chrome
       vscode.fhs
       bitwarden
-      pgadmin
       kazam
       element-desktop
       mpv
