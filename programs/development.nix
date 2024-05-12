@@ -7,8 +7,6 @@
     nodejs.pkgs.pnpm
     bun
 
-    clang
-    gcc
     alejandra
     nix-prefetch-git
     jdk17
