@@ -87,7 +87,6 @@
       spotify
       discord
       thunderbird
-      dbeaver
       obsidian
       telegram-desktop
       google-chrome
@@ -119,6 +118,17 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  services.jellyfin = {
+    enable = true;
+    user = "sergio";
+  };
+
+  environment.systemPackages = [
+    pkgs.jellyfin
+    pkgs.jellyfin-web
+    pkgs.jellyfin-ffmpeg
+  ];
 
   networking.firewall.allowedTCPPorts = [22 3000 8000 80 443 25565];
 
