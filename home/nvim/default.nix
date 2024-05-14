@@ -26,7 +26,6 @@
 
     opts = {
       formatoptions = "qlnj";
-      wrap = false;
     };
     plugins = {
       lualine.enable = true;

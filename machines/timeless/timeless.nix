@@ -87,6 +87,7 @@
       spotify
       discord
       thunderbird
+      bruno
       obsidian
       telegram-desktop
       google-chrome

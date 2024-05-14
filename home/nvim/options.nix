@@ -26,7 +26,7 @@
     scrolloff = 8;
     mouse = "a";
 
-    wrap = false;
+    wrap = true;
 
     swapfile = false;
     undofile = true;
