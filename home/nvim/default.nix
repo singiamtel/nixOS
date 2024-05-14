@@ -5,23 +5,17 @@
 }: {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
-    ./options.nix
-    #./bufferline.nix
-    ./telescope.nix
-    # ./nvim-tree.nix
-    # ./lightline.nix
-    ./git.nix
     ./cmp.nix
-    # ./none-ls.nix
-    ./wilder.nix
-    ./lsp.nix
-    ./treesitter.nix
-    # ./toggleterm.nix
+    ./colorizer.nix
     ./copilot.nix
-    # ./obsidian.nix
-    # ./alpha.nix
+    ./git.nix
     ./keymaps.nix
+    ./lsp.nix
+    ./options.nix
+    ./telescope.nix
+    ./treesitter.nix
     ./whichkey.nix
+    ./wilder.nix
   ];
 
   programs.nixvim = {
@@ -32,6 +26,7 @@
 
     opts = {
       formatoptions = "qlnj";
+      wrap = false;
     };
     plugins = {
       lualine.enable = true;

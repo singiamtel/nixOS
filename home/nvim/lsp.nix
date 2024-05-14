@@ -16,6 +16,7 @@
       pyright.enable = true;
       clangd.enable = true;
       nil_ls.enable = true;
+      tailwindcss.enable = true;
       rust-analyzer = {
         enable = true;
         installCargo = true;
