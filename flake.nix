@@ -20,12 +20,14 @@
     nixpkgs,
     nixvim,
     home-manager,
-  }: {
+  }: let
+    rootPath = self;
+  in {
     nixosConfigurations = {
       timeless = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./machines/timeless/timeless.nix
+          ./machines/timeless/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager = {
@@ -42,7 +44,7 @@
       gyroscope = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./machines/gyroscope/gyroscope.nix
+          ./machines/gyroscope/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager = {
@@ -54,6 +56,13 @@
               };
             };
           }
+        ];
+      };
+      jester = nixpkgs.lib.nixosSystem {
+        system = "aarch64-linux";
+        modules = [
+          ./machines/jester/configuration.nix
+          # No home-manager here
         ];
       };
     };
