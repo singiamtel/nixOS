@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+nixos-rebuild switch --use-remote-sudo --build-host root@jester --target-host root@jester --flake .#jester --fast

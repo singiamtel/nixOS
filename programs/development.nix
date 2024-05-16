@@ -21,6 +21,7 @@
     lazygit
     xclip
     bat
+    bc
     jq
     neofetch
     cloc

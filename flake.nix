@@ -20,9 +20,7 @@
     nixpkgs,
     nixvim,
     home-manager,
-  }: let
-    rootPath = self;
-  in {
+  }: {
     nixosConfigurations = {
       timeless = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
