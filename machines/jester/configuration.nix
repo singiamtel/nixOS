@@ -38,7 +38,7 @@ in {
     description = "pm2";
     wantedBy = ["default.target"];
     serviceConfig = {
-      ExecStart = "${pkgs.nodejs}/bin/node ~/servers/PS-Bot/dist/main.js";
+      ExecStart = "${pkgs.nodejs}/bin/node servers/PS-Bot/dist/main.js";
       # ExecStop = "${pkgs.nodejs}/bin/node kill";
       Type = "simple";
     };

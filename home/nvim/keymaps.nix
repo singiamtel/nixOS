@@ -1,10 +1,6 @@
 {
   programs.nixvim.keymaps = [
     {
-      key = "<leader>e";
-      action = "<CMD>Neotree toggle<CR>";
-    }
-    {
       key = "<F2>";
       action = "<CMD>lua vim.lsp.buf.rename()<CR>";
     }
@@ -54,6 +50,11 @@
       mode = "n";
       key = "<leader>gT";
       action = "<cmd>bp<cr>";
+    }
+
+    {
+      key = "<leader>e";
+      action = "<CMD>lua vim.diagnostic.open_float()<CR>";
     }
   ];
 }
