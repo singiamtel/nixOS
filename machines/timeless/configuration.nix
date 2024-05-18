@@ -91,6 +91,7 @@
       obsidian
       telegram-desktop
       google-chrome
+      easyeffects
       vscode.fhs
       bitwarden
       kazam

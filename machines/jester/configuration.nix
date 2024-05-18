@@ -35,14 +35,46 @@ in {
   # Define user-specific systemd service
   systemd.user.services.roomba = {
     enable = true;
-    description = "pm2";
+    description = "PS bot";
     wantedBy = ["default.target"];
     serviceConfig = {
       ExecStart = "${pkgs.nodejs}/bin/node servers/PS-Bot/dist/main.js";
-      # ExecStop = "${pkgs.nodejs}/bin/node kill";
+      # ExecStop = "pkill -f 'node servers/PS-Bot/dist/main.js'";
       Type = "simple";
     };
   };
+
+  systemd.user.services.crobat = {
+    enable = true;
+    description = "Crob.at homepage";
+    wantedBy = ["default.target"];
+    serviceConfig = {
+      ExecStart = "${pkgs.nodejs}/bin/node servers/crob.at/dist/index.js";
+      # ExecStop = "pkill -f 'node servers/crob.at/dist/main.js'";
+      Type = "simple";
+    };
+  };
+
+  services.caddy = {
+    enable = true;
+    extraConfig = ''
+      crob.at/roomba* {
+          reverse_proxy localhost:13337
+      }
+
+      crob.at {
+          reverse_proxy localhost:3000
+      }
+
+      cdn.crob.at {
+          file_server {
+            root /var/www/crob.at
+            browse
+          }
+      }
+    '';
+  };
+  networking.firewall.allowedTCPPorts = [80 443];
 
   virtualisation.docker.enable = true;
   system.stateVersion = "23.11";
