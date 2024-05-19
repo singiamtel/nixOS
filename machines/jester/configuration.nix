@@ -27,6 +27,7 @@ in {
 
   users.users.jester = {
     isNormalUser = true;
+    linger = true;
     extraGroups = ["wheel" "docker"];
     openssh.authorizedKeys.keyFiles = [
       "${rootPath}/files/keys/id_rsa.starforsaken.pub"
