@@ -98,6 +98,7 @@
       element-desktop
       mpv
       ckb-next
+      google-cloud-sdk
       (appimageTools.wrapType1 {
         name = "Cursor";
         version = "16";
