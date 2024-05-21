@@ -93,6 +93,7 @@
       google-chrome
       lyrebird
       vscode.fhs
+      yt-dlp
       bitwarden
       kazam
       element-desktop
