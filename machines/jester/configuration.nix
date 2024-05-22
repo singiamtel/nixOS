@@ -40,7 +40,6 @@ in {
     wantedBy = ["default.target"];
     serviceConfig = {
       ExecStart = "${pkgs.nodejs}/bin/node servers/PS-Bot/dist/main.js";
-      # ExecStop = "pkill -f 'node servers/PS-Bot/dist/main.js'";
       Type = "simple";
     };
   };
@@ -51,7 +50,6 @@ in {
     wantedBy = ["default.target"];
     serviceConfig = {
       ExecStart = "${pkgs.nodejs}/bin/node servers/crob.at/dist/index.js";
-      # ExecStop = "pkill -f 'node servers/crob.at/dist/main.js'";
       Type = "simple";
     };
   };
@@ -59,6 +57,16 @@ in {
   services.caddy = {
     enable = true;
     extraConfig = ''
+      {
+          log {
+              output file /var/log/caddy/caddy.log {
+                  roll_size 5MiB
+                  roll_keep_for 720h # 30 days
+              }
+              format json
+          }
+      }
+
       crob.at/roomba* {
           reverse_proxy localhost:13337
       }
@@ -79,10 +87,9 @@ in {
   services.fail2ban = {
     enable = true;
     bantime-increment = {
-      enable = true; # Enable increment of bantime after each violation
-      # formula = "ban.Time * math.exp(float(ban.Count+1)*banFactor)/math.exp(1*banFactor)";
+      enable = true;
       multipliers = "1 2 4 8 16 32 64";
-      maxtime = "168h"; # Do not ban for more than 1 week
+      maxtime = "336h"; # 2 weeks
       overalljails = true; # Calculate the bantime based on all the violations
     };
   };
