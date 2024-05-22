@@ -89,7 +89,7 @@
       thunderbird
       bruno
       obsidian
-      nixos-shell
+      quickemu
       telegram-desktop
       google-chrome
       lyrebird
