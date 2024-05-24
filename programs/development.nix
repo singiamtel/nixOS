@@ -33,6 +33,7 @@
     gh
     ranger
     ffmpeg
+    imagemagick
     zx
     gdu
     bottom
