@@ -82,25 +82,26 @@
     extraGroups = ["networkmanager" "wheel" "docker"];
     shell = pkgs.zsh;
     packages = with pkgs; [
-      ckb-next
-      kazam
-      spotify
-      discord
-      thunderbird
+      bitwarden
       bruno
+      ckb-next
+      ckb-next
+      discord
+      discordchatexporter-cli
+      element-desktop
+      google-chrome
+      google-cloud-sdk
+      kazam
+      kazam
+      lyrebird
+      mpv
       obsidian
       quickemu
+      spotify
       telegram-desktop
-      google-chrome
-      lyrebird
+      thunderbird
       vscode.fhs
       yt-dlp
-      bitwarden
-      kazam
-      element-desktop
-      mpv
-      ckb-next
-      google-cloud-sdk
       (appimageTools.wrapType1 {
         name = "Cursor";
         version = "16";
