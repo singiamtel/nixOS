@@ -56,34 +56,43 @@ in {
 
   services.caddy = {
     enable = true;
-    extraConfig = ''
+
+    configFile = pkgs.writeText "Caddyfile" ''
       {
-          log {
-              output file /var/log/caddy/caddy.log {
-                  roll_size 5MiB
-                  roll_keep_for 720h # 30 days
-              }
-              format json
+        log {
+          output file /var/log/caddy/caddy.log {
+            roll_size 5MiB
+              roll_keep_for 720h # 30 days
           }
+          format json {
+            time_format iso8601
+          }
+        }
       }
-
-      crob.at/roomba* {
-          reverse_proxy localhost:13337
-      }
-
       crob.at {
-          reverse_proxy localhost:3000
-      }
+        /roomba/* {
+          reverse_proxy localhost:13337 {
+            @internal_redirect {
+                header Location ^/
+            }
+            
+            header_up @internal_redirect Location /roomba{http.response.header.Location}
+          }
+        }
 
-      crob.at/home {
+        handle_path /home/* {
           reverse_proxy localhost:54321
+        }
+
+        reverse_proxy localhost:3000
+
       }
 
       cdn.crob.at {
-          file_server {
-            root /var/www/crob.at
+        file_server {
+          root /var/www/crob.at
             browse
-          }
+        }
       }
     '';
   };
