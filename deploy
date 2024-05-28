@@ -1,3 +1,12 @@
 #!/usr/bin/env bash
 
-nixos-rebuild switch --use-remote-sudo --build-host root@jester --target-host root@jester --flake .#jester --fast
+TARGET=$1
+
+ALLOWED_TARGETS=("jester" "blackrain")
+
+if [[ ! " ${ALLOWED_TARGETS[@]} " =~ " ${TARGET} " ]]; then
+  echo "Invalid target. Allowed targets: ${ALLOWED_TARGETS[@]}"
+  exit 1
+fi
+
+nixos-rebuild switch --use-remote-sudo --build-host root@$TARGET --target-host root@$TARGET --flake .#$TARGET --fast

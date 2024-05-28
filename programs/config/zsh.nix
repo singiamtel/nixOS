@@ -24,6 +24,7 @@
     alias vim='nvim'
     alias r='ranger'
     alias ka='killall'
+    alias sdn='sudo poweroff'
 
     bindkey -v
     KEYTIMEOUT=1

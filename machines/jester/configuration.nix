@@ -69,23 +69,21 @@ in {
           }
         }
       }
+
       crob.at {
-        /roomba/* {
+        handle_path /roomba* {
           reverse_proxy localhost:13337 {
-            @internal_redirect {
-                header Location ^/
-            }
-            
-            header_up @internal_redirect Location /roomba{http.response.header.Location}
+            header_down Location ^/ /roomba/{http.response.header.Location}
           }
         }
 
-        handle_path /home/* {
-          reverse_proxy localhost:54321
+        handle_path /home* {
+          reverse_proxy localhost:54321 {
+            header_down Location ^/ /home/{http.response.header.Location}
+          }
         }
 
         reverse_proxy localhost:3000
-
       }
 
       cdn.crob.at {
