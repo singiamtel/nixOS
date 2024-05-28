@@ -27,6 +27,7 @@
         '';
       })
       deluge
+      transmission_4-qt
     ];
     stateVersion = "23.11";
   };

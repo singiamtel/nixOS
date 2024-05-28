@@ -64,7 +64,7 @@
         ];
       };
       blackrain = nixpkgs.lib.nixosSystem {
-        system = "aarch64-linux";
+        system = "x86_64-linux";
         modules = [
           ./machines/blackrain/configuration.nix
           # No home-manager here

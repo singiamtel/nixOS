@@ -2,14 +2,20 @@
   modulesPath,
   lib,
   pkgs,
+  config,
   ...
 }: let
   rootPath = ../..;
 in {
   imports = [
-    (modulesPath + "/profiles/qemu-guest.nix")
     ./hardware-configuration.nix
   ];
+
+  boot.loader.grub = {
+    efiSupport = true;
+    efiInstallAsRemovable = true;
+    device = "nodev";
+  };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
   networking.useDHCP = lib.mkDefault true;
@@ -34,7 +40,7 @@ in {
     ];
   };
 
-  networking.firewall.allowedTCPPorts = [80 443];
+  networking.firewall.allowedTCPPorts = [22 80 443];
   services.fail2ban = {
     enable = true;
     bantime-increment = {
@@ -45,6 +51,20 @@ in {
     };
   };
 
+  networking.hostName = "blackrain";
+  networking.domain = "";
+  services.openssh.enable = true;
+
   virtualisation.docker.enable = true;
   system.stateVersion = "23.11";
+
+  services.transmission = {
+    enable = true;
+    openRPCPort = true;
+    settings = {
+      rpc-bind-address = "0.0.0.0";
+      download-dir = "/media/Downloads";
+      rpc-whitelist = "127.0.0.1,192.168.1.122";
+    };
+  };
 }
