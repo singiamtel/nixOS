@@ -75,6 +75,10 @@ in {
           reverse_proxy localhost:3000
       }
 
+      crob.at/home {
+          reverse_proxy localhost:54321
+      }
+
       cdn.crob.at {
           file_server {
             root /var/www/crob.at
