@@ -9,4 +9,4 @@ if [[ ! " ${ALLOWED_TARGETS[@]} " =~ " ${TARGET} " ]]; then
   exit 1
 fi
 
-nixos-rebuild switch --use-remote-sudo --build-host root@$TARGET --target-host root@$TARGET --flake .#$TARGET --fast
+nixos-rebuild --use-remote-sudo --build-host root@$TARGET --target-host root@$TARGET --flake .#$TARGET --fast switch

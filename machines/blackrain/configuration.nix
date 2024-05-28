@@ -11,10 +11,15 @@ in {
     ./hardware-configuration.nix
   ];
 
-  boot.loader.grub = {
-    efiSupport = true;
-    efiInstallAsRemovable = true;
-    device = "nodev";
+  boot.loader = {
+    efi = {
+      canTouchEfiVariables = false;
+    };
+    grub = {
+      efiSupport = true;
+      efiInstallAsRemovable = true;
+      device = "nodev";
+    };
   };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -23,6 +28,9 @@ in {
     vim
     git
     nodejs
+    jellyfin
+    jellyfin-web
+    jellyfin-ffmpeg
   ];
 
   users.users.root = {
@@ -40,7 +48,10 @@ in {
     ];
   };
 
-  networking.firewall.allowedTCPPorts = [22 80 443];
+  networking.firewall = {
+    allowedTCPPorts = [22 80 443 8096];
+    allowedUDPPorts = [53 51820];
+  };
   services.fail2ban = {
     enable = true;
     bantime-increment = {
@@ -59,6 +70,7 @@ in {
   system.stateVersion = "23.11";
 
   services.transmission = {
+    user = "blackrain";
     enable = true;
     openRPCPort = true;
     settings = {
@@ -67,4 +79,13 @@ in {
       rpc-whitelist = "127.0.0.1,192.168.1.122";
     };
   };
+
+  services.tailscale.enable = true;
+
+  services.jellyfin = {
+    enable = true;
+    user = "blackrain";
+  };
+
+  services.logind.lidSwitch = "ignore";
 }

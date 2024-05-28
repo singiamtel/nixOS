@@ -125,6 +125,8 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  services.tailscale.enable = true;
+
   services.jellyfin = {
     enable = true;
     user = "sergio";
