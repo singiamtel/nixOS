@@ -132,13 +132,18 @@
     user = "sergio";
   };
 
-  environment.systemPackages = [
-    pkgs.jellyfin
-    pkgs.jellyfin-web
-    pkgs.jellyfin-ffmpeg
+  environment.systemPackages = with pkgs; [
+    jellyfin
+    jellyfin-web
+    jellyfin-ffmpeg
   ];
 
-  networking.firewall.allowedTCPPorts = [22 3000 8000 80 443 25565 8096];
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [22 3000 8000 80 443 25565 8096];
+    allowedUDPPorts = [config.services.tailscale.port];
+    trustedInterfaces = ["tailscale0"];
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
