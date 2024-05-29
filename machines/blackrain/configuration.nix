@@ -73,10 +73,11 @@ in {
     user = "blackrain";
     enable = true;
     openRPCPort = true;
+    credentialsFile = "/home/blackrain/.secrets/transmission.json";
     settings = {
       rpc-bind-address = "0.0.0.0";
       download-dir = "/media/Downloads";
-      rpc-whitelist = "127.0.0.1,192.168.1.122";
+      rpc-whitelist = "127.0.0.1,192.168.1.122,timeless";
     };
   };
 

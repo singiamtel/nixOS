@@ -34,6 +34,7 @@
     ranger
     ffmpeg
     imagemagick
+    entr
     zx
     gdu
     bottom
