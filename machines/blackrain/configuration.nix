@@ -89,4 +89,13 @@ in {
   };
 
   services.logind.lidSwitch = "ignore";
+  services.adguardhome = {
+    enable = true;
+    openFirewall = true;
+    settings = {
+      bind_port = 53;
+      schema_version = 20;
+    };
+  };
+
 }
