@@ -38,9 +38,13 @@ in {
     enable = true;
     description = "PS bot";
     wantedBy = ["default.target"];
+
+
     serviceConfig = {
       ExecStart = "${pkgs.nodejs}/bin/node servers/PS-Bot/dist/main.js";
       Type = "simple";
+      RuntimeMaxSec = "6h";
+      Restart = "always";
     };
   };
 
